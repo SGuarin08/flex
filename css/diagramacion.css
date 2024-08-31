@@ -1,3 +1,81 @@
+html,body{
+    height: 100%;
+}
+
 body{
-    background:radial-gradient(black,blue,white);
+    background:linear-gradient(rgb(118, 58, 58) 10%,rgb(200, 188, 95) 80%,white );
+}
+
+#padre{
+    align-items: flex-start;
+    border:pink solid;
+    display: flex;
+    justify-content:  center;
+    height: 400px;
+}
+
+#padre div{
+    
+    height: 200px;
+    width: 20%;
+}
+
+#hijo1{
+    background: gold;
+}
+#hijo2{
+    background: red;    
+}
+#hijo3{
+    background: green;
+}
+#hijo4{
+    background: rgb(205, 47, 205);
+}
+.espacio{
+    background: rgba(255,255,255,0.4);
+    height: 300px;
+}
+
+.fondo{
+    background:url("paisaje.jpg");
+    background-size:cover;
+    background-attachment: fixed;
+    height:300px;
+}
+.textos{
+    column-count: 3;
+    column-gap: 60px;
+    column-rule: dotted darkblue 0.1em;
+    margin: 0 auto;
+    text-align: justify;
+    width: 70%;
+}
+
+@keyframes enloquecer{
+    0%{background: red;}
+    20%{background: rgb(219,188, 17);}
+    40%{background: rgb(14, 223, 42); transform:rotate(10deg)}
+    60%{background: rgb(255, 0, 187);}
+    80%{background: rgb(150, 153, 51);}
+    100%{background: rgb(27, 23, 83);}
+
+}
+@media screen and (max-width: 500px){
+    body{
+        background: white;
+    }
+    #padre{
+        flex-direction: column;
+    }
+    #padre div{
+        width: 100%;
+    }
+    #padre #hijo4{
+        display: none;
+    }
+    #padre #hijo3{
+        animation: enloquecer 0,5s infinite alternate;
+  }
+
 }
